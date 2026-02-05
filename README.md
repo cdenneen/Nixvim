@@ -2,7 +2,7 @@
       <img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake-colours.svg" width="96px" height="96px" />
       <br>
 
-Akari
+nixvim
 
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" />
 <br>
@@ -12,7 +12,7 @@ Akari
 <div align="center">
    <p></p>
    <a href="https://github.com/sioodmy/dotfiles/">
-      <img src="https://img.shields.io/github/repo-size/spector700/Akari?color=ea999c&labelColor=303446&style=for-the-badge">
+      <img src="https://img.shields.io/github/repo-size/cdenneen/nixvim?color=ea999c&labelColor=303446&style=for-the-badge">
    </a>
       <a = href="https://nixos.org">
       <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
@@ -38,11 +38,11 @@ Akari
 # 🔨 Installation
 
 If you'd like to give it a try before installing:
-`nix run github:spector700/Akari`
+`nix run github:cdenneen/nixvim`
 
 ### Adding it as a flake
 
-1: Go to the flake.nix and add `Akari.url = "github:spector700/Akari"` to your
+1: Go to the flake.nix and add `nixvim.url = "github:cdenneen/nixvim"` to your
 inputs.
 
 ```nix
@@ -51,14 +51,14 @@ inputs.
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    Akari.url = "github:spector700/Akari";
+    nixvim.url = "github:cdenneen/nixvim";
   };
 }
 ```
 
 2: Run nix flake update
 
-3: Install it by adding `inputs.Akari.packages.${system}.default` to your
+3: Install it by adding `inputs.nixvim.packages.${system}.default` to your
 environment.systemPackages or home.packages. If you're using home-manager.
 
 ```nix
@@ -66,7 +66,7 @@ environment.systemPackages or home.packages. If you're using home-manager.
 { inputs, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    inputs.Akari.packages.${system}.default
+    inputs.nixvim.packages.${system}.default
   ];
 }
 ```
