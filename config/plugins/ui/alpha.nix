@@ -18,19 +18,12 @@
             };
             type = "text";
             val = [
-              "⠀⣞⢽⢪⢣⢣⢣⢫⡺⡵⣝⡮⣗⢷⢽⢽⢽⣮⡷⡽⣜⣜⢮⢺⣜⢷⢽⢝⡽⣝"
-              "⠸⡸⠜⠕⠕⠁⢁⢇⢏⢽⢺⣪⡳⡝⣎⣏⢯⢞⡿⣟⣷⣳⢯⡷⣽⢽⢯⣳⣫⠇"
-              "⠀⠀⢀⢀⢄⢬⢪⡪⡎⣆⡈⠚⠜⠕⠇⠗⠝⢕⢯⢫⣞⣯⣿⣻⡽⣏⢗⣗⠏⠀"
-              "⠀⠪⡪⡪⣪⢪⢺⢸⢢⢓⢆⢤⢀⠀⠀⠀⠀⠈⢊⢞⡾⣿⡯⣏⢮⠷⠁⠀⠀"
-              "⠀⠀⠀⠈⠊⠆⡃⠕⢕⢇⢇⢇⢇⢇⢏⢎⢎⢆⢄⠀⢑⣽⣿⢝⠲⠉⠀⠀⠀⠀"
-              "⠀⠀⠀⠀⠀⡿⠂⠠⠀⡇⢇⠕⢈⣀⠀⠁⠡⠣⡣⡫⣂⣿⠯⢪⠰⠂⠀⠀⠀⠀"
-              "⠀⠀⠀⠀⡦⡙⡂⢀⢤⢣⠣⡈⣾⡃⠠⠄⠀⡄⢱⣌⣶⢏⢊⠂⠀⠀⠀⠀⠀⠀"
-              "⠀⠀⠀⠀⢝⡲⣜⡮⡏⢎⢌⢂⠙⠢⠐⢀⢘⢵⣽⣿⡿⠁⠁⠀⠀⠀⠀⠀⠀⠀"
-              "⠀⠀⠀⠀⠨⣺⡺⡕⡕⡱⡑⡆⡕⡅⡕⡜⡼⢽⡻⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-              "⠀⠀⠀⠀⣼⣳⣫⣾⣵⣗⡵⡱⡡⢣⢑⢕⢜⢕⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-              "⠀⠀⠀⣴⣿⣾⣿⣿⣿⡿⡽⡑⢌⠪⡢⡣⣣⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-              "⠀⠀⠀⡟⡾⣿⢿⢿⢵⣽⣾⣼⣘⢸⢸⣞⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-              "⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋⠀⠀⠀⠀⠀⠀"
+              "        /\\        "
+              "   /\\  /  \\  /\\   "
+              "  /  \\/ /\\ \\/  \\  "
+              "  \\  /\\ \\/ /\\  /  "
+              "   \\/  \\  /  \\/   "
+              "        \\/        "
             ];
           }
           (padding 6)
@@ -124,6 +117,56 @@
                 }
               ];
               shortcut = "g";
+
+              position = "center";
+              cursor = 3;
+              width = 40;
+              align_shortcut = "right";
+              hl_shortcut = "Keyword";
+            };
+          }
+          (padding 1)
+          {
+            type = "button";
+            val = "󰙅  Toggle File Tree";
+            on_press.raw = "require('neo-tree.command').execute({ toggle = true })";
+            opts = {
+              keymap = [
+                "n"
+                "e"
+                ":Neotree toggle<CR>"
+                {
+                  noremap = true;
+                  silent = true;
+                  nowait = true;
+                }
+              ];
+              shortcut = "e";
+
+              position = "center";
+              cursor = 3;
+              width = 40;
+              align_shortcut = "right";
+              hl_shortcut = "Keyword";
+            };
+          }
+          (padding 1)
+          {
+            type = "button";
+            val = "󰊢  Git UI";
+            on_press.raw = "require('snacks').lazygit()";
+            opts = {
+              keymap = [
+                "n"
+                "l"
+                "<cmd>lua require('snacks').lazygit()<cr>"
+                {
+                  noremap = true;
+                  silent = true;
+                  nowait = true;
+                }
+              ];
+              shortcut = "l";
 
               position = "center";
               cursor = 3;
